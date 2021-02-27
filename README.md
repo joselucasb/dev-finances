@@ -1,6 +1,6 @@
-<h2 align="center">
+<h1 align="center">
   dev.finances - controle de finanças
-</h2>
+</h1>
 
 <p align="center">
   <img alt="GitHub" src="https://img.shields.io/github/license/joselucasb/dev-finances?color=%23069c56&style=for-the-badge">
