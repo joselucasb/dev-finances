@@ -1,0 +1,334 @@
+body {
+  background-color: var(--background);
+}
+
+/* 
+ * sr only
+ */
+
+.sr-only {
+  position: absolute;
+  font-size: 0.01px;
+}
+
+/* 
+ * headings - styles
+ */
+
+h2 {
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: normal;
+}
+
+/* 
+ * Animations 
+ */
+
+tr {
+  animation: fadein-top 0.5s ease-out;
+}
+
+/* 
+ * header - styles
+ */
+
+.header {
+  width: 100%;
+  height: 180px;
+
+  padding-top: 38px;
+
+  background-color: var(--primary-color);
+  background-size: 200% 200%;
+
+  text-align: center;
+}
+
+/* 
+ * main - styles
+ */
+
+.main {
+  width: min(90vw, 860px);
+  margin: auto;
+}
+
+/* 
+ * balance and balance-card - styles
+ */
+
+.balance {
+  margin-top: -80px;
+}
+
+.balance-card {
+  width: 100%;
+  margin: 16px 0;
+  padding: 28px 32px;
+
+  background-color: var(--white-color);
+  box-shadow: 3px 3px 9px -1px rgba(0, 0, 0, 0.05);
+
+  border-radius: 4px;
+  cursor: pointer;
+
+  transition: transform 0.3s;
+}
+
+.balance-card:hover {
+  transform: translateY(-5%);
+}
+
+.balance-card h3 {
+  font-size: 1.8rem;
+
+  font-weight: normal;
+  color: var(--gray-color);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.balance-card h3 img {
+  width: 28px;
+  height: 28px;
+}
+
+.balance-card p {
+  margin-top: 14px;
+
+  font-size: 2.2rem;
+  color: var(--darken-color);
+}
+
+.balance-card.total {
+  background-color: var(--secondary-color);
+}
+
+.balance-card.total h3,
+.balance-card.total p {
+  color: var(--white-color);
+}
+
+/* 
+ * Transactions
+ */
+
+.transactions {
+  margin: 32px 0 16px;
+}
+
+/* 
+ * Transactions buttons
+ */
+
+.transactions-buttons {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 
+ * Buttons
+ */
+
+.button-open {
+  padding: 8px;
+
+  background-color: transparent;
+
+  color: var(--secondary-color);
+  font-size: 1.7rem;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.button-open:hover {
+  color: var(--secondary-color-hover);
+
+  text-decoration: underline;
+}
+
+.button-edit.hidden {
+  display: none;
+}
+
+.button-edit {
+  padding: 12px;
+
+  border-radius: 4px;
+  background-color: var(--secondary-color);
+
+  color: var(--white-color);
+  font-size: 1.6rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background 0.4s;
+}
+
+.button-edit:hover {
+  background-color: var(--secondary-color-hover);
+}
+
+.button-edit img {
+  width: 18px;
+  height: 18px;
+}
+
+/* 
+ * Table
+ */
+
+.data-table {
+  width: 100%;
+  margin-top: 16px;
+
+  border-spacing: 0 8px;
+
+  color: var(--dark-blue);
+  text-align: center;
+}
+
+.data-table th,
+.data-table td {
+  background-color: var(--white-color);
+  padding: 16px;
+
+  font-size: 1.7rem;
+}
+
+.data-table tr td:nth-child(2) {
+  white-space: nowrap;
+}
+
+.data-table tr td:first-child,
+.data-table tr th:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+.data-table tr td:last-child img {
+  width: 28px;
+  height: 28px;
+}
+
+.data-table tr {
+  opacity: 0.7;
+  cursor: pointer;
+
+  transition: opacity 0.2s;
+}
+
+.data-table tr:hover {
+  opacity: 1;
+}
+
+.income {
+  color: var(--income-color);
+  font-weight: bold;
+}
+
+.expense {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+/* 
+ * footer - styles
+ */
+
+.footer {
+  width: 100%;
+  padding: 24px 0;
+}
+
+.footer p {
+  text-align: center;
+
+  color: var(--darken-color);
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.footer a {
+  color: var(--blue);
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* 
+ * Responsive - styles
+ */
+
+@media (max-width: 700px) {
+  :root {
+    font-size: 58%;
+  }
+
+  tr {
+    animation: none;
+  }
+
+  .button {
+    cursor: default;
+  }
+
+  .balance {
+    display: block;
+  }
+
+  .balance-card:not(:first-child) {
+    margin: 14px 0;
+  }
+
+  .table-container {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  .transactions-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 460px) {
+  .table-container {
+    position: relative;
+  }
+
+  .table-container:before {
+    content: '→';
+    font-size: 1.6rem;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    color: var(--dark-blue);
+
+    animation: arrow 0.7s linear alternate infinite;
+  }
+}
+
+@media (min-width: 700px) {
+  .balance {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}

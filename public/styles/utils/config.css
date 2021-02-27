@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  outline: none;
+  border: none;
+}
+
+*,
+input,
+button {
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --background: #f0f0f5;
+
+  --primary-color: #006b3d;
+  --secondary-color: #069c56;
+
+  --primary-color-hover: #005a33;
+  --secondary-color-hover: #00be66;
+
+  --warning-color: #00914d;
+  --warning-color-hover: #038649;
+
+  --white-color: #fff;
+  --gray-color: #757575;
+
+  --settings-color: #bbb;
+  --blue: #3c3c7c;
+  --dark-blue: #2d2d52;
+  --darken-color: rgba(0, 0, 0, 0.7);
+
+  --cancel-color: #fd3a69;
+  --income-color: #dd4444;
+
+  --exception-color: #e64444;
+  --exception-color-dark: #ad2929;
+  --exception-color-dark-hover: #8f1e1e;
+
+  --modal-background: rgba(0, 0, 0, 0.6);
+
+  font-size: 62.5%;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+
+  pointer-events: none;
+}

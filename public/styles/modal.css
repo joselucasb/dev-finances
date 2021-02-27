@@ -1,0 +1,186 @@
+#modal.hidden,
+#modal-update.hidden {
+  display: none;
+}
+
+.modal-content,
+.update-content {
+  animation: modal-show 0.6s ease-out;
+}
+
+#modal,
+#modal-update {
+  width: 100%;
+  height: 100vh;
+
+  overflow-y: auto;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+
+  background-color: var(--modal-background);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content,
+.update-content {
+  width: min(95vw, 580px);
+  padding: 48px;
+
+  background-color: var(--white-color);
+  border-radius: 4px;
+}
+
+legend {
+  width: 100%;
+  margin-bottom: 10px;
+
+  color: var(--dark-blue);
+  font-size: 2.6rem;
+  font-weight: 600;
+}
+
+.input-box {
+  width: 100%;
+  margin: 12px 0;
+}
+
+.help {
+  color: var(--gray-color);
+  font-size: 1.7rem;
+
+  margin: 10px 5px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 14px 16px;
+
+  background-color: var(--background);
+
+  font-size: 1.7rem;
+  color: var(--darken-color);
+
+  border-radius: 5px;
+  border: 1px solid transparent;
+
+  transition: border-color 0.3s;
+}
+
+input:focus,
+section:focus {
+  border-color: var(--primary-color);
+}
+
+.modal-buttons {
+  width: 100%;
+  margin-top: 24px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-submit,
+.button-cancel {
+  display: block;
+
+  width: 140px;
+  padding: 14px 0;
+
+  font-size: 1.6rem;
+  font-weight: bold;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+.button-submit {
+  background-color: var(--secondary-color);
+
+  color: var(--white-color);
+  transition: background 0.4s ease-out;
+}
+
+.button-submit:hover {
+  background-color: var(--secondary-color-hover);
+}
+
+.button-cancel {
+  color: var(--cancel-color);
+  border: 2px solid var(--cancel-color);
+
+  background-color: transparent;
+
+  transition: background 0.4s, color 0.4s;
+}
+
+.button-cancel:hover {
+  color: var(--white-color);
+  background-color: var(--cancel-color);
+}
+
+/*
+ * Responsive - styles
+ */
+
+@media (max-width: 700px) {
+  .modal-content {
+    padding: 38px 52px;
+  }
+
+  .modal-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .button-submit,
+  .button-cancel {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .button-cancel {
+    order: 2;
+  }
+
+  legend {
+    font-size: 2.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content,
+  .update-content {
+    padding: 24px;
+    border-radius: 3px;
+  }
+
+  legend {
+    font-size: 2rem;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  .help {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-height: 480px) {
+  .modal-overlay,
+  .modal-update {
+    display: block;
+  }
+
+  .modal-content,
+  .update-content {
+    margin: 10px auto;
+  }
+}

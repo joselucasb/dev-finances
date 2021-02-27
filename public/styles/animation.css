@@ -1,0 +1,49 @@
+@keyframes modal-show {
+  from {
+    transform: translateY(-30%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes arrow {
+  from {
+    right: 32px;
+  }
+
+  to {
+    right: 16px;
+  }
+}
+
+@keyframes animate-up {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadin-down {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadein-top {
+  from {
+    transform: translateY(20%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}

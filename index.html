@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br" translate="yes">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <meta name="author" content="José Lucas" />
+    <meta name="theme-color" content="#fff" />
+
+    <link
+      rel="shortcut icon"
+      href="./public/assets/icons/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <meta
+      name="description"
+      content="dev.finances, sistema de gestão financeira online"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./public/styles/utils/config.css" />
+    <link rel="stylesheet" href="./public/styles/animation.css" />
+
+    <link rel="stylesheet" href="./public/styles/main.css" />
+    <link rel="stylesheet" href="./public/styles/modal.css" />
+    <link rel="stylesheet" href="./public/styles/exception.css" />
+
+    <title>Dev.finance$ - Gestão financeira</title>
+  </head>
+  <body>
+    <header class="header">
+      <img src="./public/assets/logo.svg" alt="Dev.finance$ logo" />
+      <p class="sr-only">Sistema de Gestão financeira</p>
+    </header>
+
+    <main class="main">
+      <section class="balance">
+        <h2 class="sr-only">Balanço</h2>
+
+        <div class="balance-card" title="Entradas">
+          <h3>
+            <span>Entradas</span>
+            <img src="./public/assets/income.svg" alt="Income" />
+          </h3>
+          <p class="income-display">R$ 0,00</p>
+        </div>
+
+        <div class="balance-card" title="Saídas">
+          <h3>
+            <span>Saídas</span>
+            <img src="./public/assets/expense.svg" alt="Expense" />
+          </h3>
+          <p class="expense-display">R$ 0,00</p>
+        </div>
+
+        <div class="balance-card total" title="Total">
+          <h3>
+            <span>Total</span>
+            <img src="./public/assets/total.svg" alt="Total" />
+          </h3>
+          <p class="total-display">R$ 0,00</p>
+        </div>
+      </section>
+
+      <section class="transactions">
+        <h2 class="sr-only">Transações</h2>
+
+        <div class="transactions-buttons">
+          <button class="button-open" type="button" onclick="Modal.open()">
+            + Faça uma transação
+          </button>
+
+          <button
+            class="button-edit"
+            type="button"
+            onclick="ModalUpdate.open()"
+          >
+            <span>Editar transações</span>
+          </button>
+        </div>
+
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Descrição</th>
+                <th>Quantia</th>
+                <th>Data</th>
+                <th>Excluir</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Dev.finance$ - Gestão financeira © <span class="date-display"></span>
+      </p>
+
+      <p>
+        Código fonte:
+        <a href="https://github.com/joselucasb/dev-finances">dev.finances</a>
+      </p>
+    </footer>
+
+    <div id="modal" class="hidden">
+      <div class="modal-content">
+        <form action="#" class="modal-form" onsubmit="Form.submit(event)">
+          <fieldset>
+            <legend>Faça uma transação</legend>
+
+            <div class="input-box">
+              <label for="description" class="sr-only">Descrição</label>
+              <input
+                type="text"
+                name="description"
+                placeholder="Descrição"
+                maxlength="48"
+              />
+            </div>
+
+            <div class="input-box">
+              <label for="amount" class="sr-only">Quantia</label>
+              <input
+                type="number"
+                name="amount"
+                max="10000000"
+                placeholder="00,00"
+                step="0.01"
+              />
+
+              <p class="help">
+                Use o sinal ( -, negativo) para despesas e vírgula para casas
+                decimais.
+              </p>
+            </div>
+
+            <div class="input-box">
+              <label for="date" class="sr-only">Data</label>
+              <input
+                type="date"
+                name="date"
+                placeholder="Data ex: 00/00/0000"
+              />
+            </div>
+
+            <div class="modal-buttons">
+              <button
+                type="button"
+                class="button-cancel"
+                onclick="Modal.close()"
+              >
+                Cancelar
+              </button>
+              <button type="submit" class="button-submit">Salvar</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+
+    <div id="modal-update" class="hidden">
+      <div class="update-content">
+        <form
+          action="#"
+          class="modal-form"
+          onsubmit="FormUpdate.submit(event);"
+        >
+          <fieldset>
+            <legend>Atualizar transações</legend>
+
+            <div class="input-box">
+              <label for="select" class="sr-only">seleção</label>
+              <select name="index" class="update-data">
+                <option value="" disabled selected>
+                  Escolha uma transação (obrigatório)
+                </option>
+              </select>
+            </div>
+
+            <div class="input-box">
+              <label for="description" class="sr-only">Descrição</label>
+              <input
+                type="text"
+                name="description"
+                placeholder="Descrição, (opcional)"
+                maxlength="48"
+              />
+            </div>
+
+            <div class="input-box">
+              <label for="amount" class="sr-only">Quantia</label>
+              <input
+                type="number"
+                name="amount"
+                max="10000000"
+                placeholder="Quantia, (opcional)"
+                step="0.01"
+              />
+
+              <p class="help">
+                Use o sinal ( -, negativo) para despesas e vírgula para casas
+                decimais.
+              </p>
+            </div>
+
+            <div class="input-box">
+              <label for="date" class="sr-only">Data</label>
+              <input
+                type="date"
+                name="date"
+                placeholder="Data ex: 00/00/0000"
+              />
+            </div>
+
+            <div class="modal-buttons">
+              <button
+                type="button"
+                class="button-cancel"
+                onclick="ModalUpdate.close()"
+              >
+                Cancelar
+              </button>
+              <button type="submit" class="button-submit">Salvar</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+
+    <div class="exception-container">
+      <button
+        type="button"
+        class="exception-button"
+        onclick="Exception.close()"
+      >
+        <img src="./public/assets/close-error.svg" alt="close image" />
+      </button>
+
+      <div class="exception-content"></div>
+    </div>
+
+    <script src="./public/scripts/index.js"></script>
+  </body>
+</html>
