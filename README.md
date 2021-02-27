@@ -3,8 +3,8 @@
 </h1>
 
 <p align="center">
-  <img alt="GitHub" src="https://img.shields.io/github/license/joselucasb/dev-finances?color=%23069c56&style=for-the-badge">
-
+  <img alt="GitHub" src="https://img.shields.io/github/license/joselucasb/dev-finances?color=%2300be66&style=for-the-badge">
+  
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/joselucasb/dev-finances?color=%23069c56&style=for-the-badge">
 
   <img alt="GitHub deployments" src="https://img.shields.io/github/deployments/joselucasb/dev-finances/github-pages?color=%23069c56&style=for-the-badge">
