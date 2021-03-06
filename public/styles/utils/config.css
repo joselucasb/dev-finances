@@ -53,6 +53,9 @@ img {
   user-select: none;
   -webkit-user-drag: none;
   -moz-user-select: none;
-
   pointer-events: none;
+}
+
+[hidden] {
+  display: none;
 }

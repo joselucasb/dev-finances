@@ -134,7 +134,8 @@ tr {
  * Buttons
  */
 
-.button-open {
+.button-open,
+.export-csv {
   padding: 8px;
 
   background-color: transparent;
@@ -172,13 +173,29 @@ tr {
   transition: background 0.4s;
 }
 
-.button-edit:hover {
+.button-edit:hover,
+.export-csv:hover {
   background-color: var(--secondary-color-hover);
 }
 
 .button-edit img {
   width: 18px;
   height: 18px;
+}
+
+.export-csv {
+  padding: 12px;
+  margin-top: 16px;
+  border-radius: 5px;
+
+  background-color: var(--secondary-color);
+
+  color: var(--white-color);
+  font-size: 1.4rem;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: background 0.4s;
 }
 
 /* 
