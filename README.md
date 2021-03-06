@@ -3,18 +3,14 @@
 </h1>
 
 <p align="center">
-  <img alt="GitHub" src="https://img.shields.io/github/license/joselucasb/dev-finances?color=%2300be66&style=flat-square">
+  <img alt="GitHub" src="https://img.shields.io/github/license/joselucasb/dev-finances?color=%2300be66&style=for-the-badge">
   
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/joselucasb/dev-finances?color=%2300be66&style=flat-square">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/joselucasb/dev-finances?color=%2300be66&style=for-the-badge">
 
-  <img alt="GitHub deployments" src="https://img.shields.io/github/deployments/joselucasb/dev-finances/github-pages?color=%2300be66&style=flat-square">
-
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/joselucasb/dev-finances?color=#2300be66&style=flat-square">
-
-  <img alt="Author" src="https://img.shields.io/badge/Author-Jos%C3%A9%20Lucas-2300be66" />
+  <img alt="GitHub deployments" src="https://img.shields.io/github/deployments/joselucasb/dev-finances/github-pages?color=%2300be66&style=for-the-badge">
 </p>
 
-## :book: Sobre
+## :book: Descrição
 
 **dev.finances** é uma aplicação de gestão financeira, foi desenvolvida
 durante a Maratona Discover (Rocketseat) com o objetivo de colocar
@@ -62,6 +58,10 @@ cd dev-fiances/
 Depois de realizar os procedimentos acima, você pode abrir o
 arquivo `index.html` no seu navegador favorito. Bons testes !
 
+### :page_with_curl: Licença
+
+Veja o arquivo [LICENSE](LICENSE) para mais informações.
+
 ### Créditos
 
-Com muito :heart: [José Lucas](https://www.github.com/joselucasb)
+Desenvolvido com muito :heart: by: [José Lucas](https://www.github.com/joselucasb)
