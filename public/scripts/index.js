@@ -24,6 +24,30 @@ const ModifyCSS = {
   },
 };
 
+/*
+ * Attributes
+ */
+
+const Attributes = {
+  add(hmlElement, data = {}) {
+    for (const key in data) {
+      const value = data[key];
+
+      hmlElement.setAttribute(key, value);
+    }
+  },
+
+  remove(hmlElement, data = []) {
+    data.forEach((value) => {
+      hmlElement.removeAttribute(value);
+    });
+  },
+};
+
+/*
+ * Storage
+ */
+
 const ApplicationStorage = {
   key: 'dev.finances:data',
 
@@ -182,7 +206,7 @@ const Exception = {
 };
 
 /*
- * Moda
+ * Modal
  */
 
 const Modal = {
@@ -386,6 +410,7 @@ const FormUpdate = {
 
 const View = {
   tableBody: document.querySelector('tbody'),
+  table: document.querySelector('table'),
 
   addTransaction(transaction, index) {
     const tableRow = document.createElement('tr');
@@ -449,6 +474,37 @@ const View = {
 
   clearView() {
     View.tableBody.innerHTML = '';
+  },
+};
+
+/*
+ * Export
+ */
+
+const Export = {
+  createCSV: new CreateCSV(View.table),
+  anchorDowndoad: document.querySelector('a[data-download]'),
+
+  exportCSVFile(fileName = 'table.csv') {
+    const blob = new Blob([Export.createCSV.csvString()], {
+      type: 'text/csv;charset=utf-8',
+    });
+
+    const url = URL.createObjectURL(blob);
+
+    Attributes.add(Export.anchorDowndoad, {
+      href: url,
+      download: fileName,
+    });
+
+    Export.anchorDowndoad.click();
+
+    setTimeout(() => Export.clearProcedures(url), 500);
+  },
+
+  clearProcedures(url) {
+    Attributes.remove(Export.anchorDowndoad, ['href', 'download']);
+    URL.revokeObjectURL(url);
   },
 };
 
